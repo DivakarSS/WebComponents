@@ -1,0 +1,15 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>vue-select demo</title>
+<script src="./vue-select.umd.js"></script>
+<link rel="stylesheet" href="./vue-select.css">
+<script> this['__DEV__'] = false</script>
+<vue-select></vue-select>
+<script>
+    
+    const linkElem = document.createElement('link');
+    linkElem.setAttribute('rel', 'stylesheet');
+    linkElem.setAttribute('href', 'vue-select.css');
+    console.log("link element...",linkElem);
+    document.getElementsByTagName("vue-select")[0].shadowRoot.appendChild(linkElem);
+</script>
