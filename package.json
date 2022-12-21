@@ -6,13 +6,13 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build-cascade-static": "vue-cli-service build --mode production --modern --target lib --inline-vue --name vue-select ./src/main.ts"
+    "build-cascade-static": "vue-cli-service build --mode production --modern --target lib --inline-vue --name vue-select ./src/index.ts"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
     "bootstrap-vue-3": "^0.4.15",
-    "core-js": "^3.8.3", 
+    "core-js": "^3.8.3",
     "html-parsed-element": "^0.4.1",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
@@ -31,6 +31,7 @@
     "csstype": "^3.1.1",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
-    "typescript": "~4.5.5"
+    "typescript": "~4.5.5",
+    "unplugin-vue-components": "^0.22.12"
   }
 }
