@@ -2,23 +2,35 @@
     <div class="root">
        <h3>Learn Vue-select</h3>
        <v-select :options ="fruits" ></v-select > <hr/><br/>
-       <b-form-select v-model="selectedTechnology" :options="technologies"
-       style="width: 200px; margin-top: 0px; margin-bottom: 0px; margin-right: 10px;"></b-form-select>
+       <BFormSelect v-model="selectedTechnology" :options="technologies"
+       style="width: 200px; margin-top: 0px; margin-bottom: 0px; margin-right: 10px;"></BFormSelect>
        <hr/><br/>
-       <model></model>
+       <BootstrapModel></BootstrapModel>
+       <hr/><br/>
+       <BDropdown id="dropdown-1" text="Dropdown Button" class="m-md-2">
+        <BDropdownItemButton>First Action</BDropdownItemButton>
+        <BDropdownItemButton>Second Action</BDropdownItemButton>
+        <BDropdownItemButton>Third Action</BDropdownItemButton>
+          <BDropdownDivider></BDropdownDivider>
+        <BDropdownItemButton active>Active action</BDropdownItemButton>
+        <BDropdownItemButton disabled>Disabled action</BDropdownItemButton>
+       </BDropdown>
+       <hr/><br/>
+       <b-button class="mx-1" @click="check()" variant="success">Success</b-button>
     </div>
     
   </template>
   <script>
-  import {createApp} from 'vue'
+  // import {createApp} from 'vue'
   import vSelect from "vue-select";
-  import BootstrapVue3 from 'bootstrap-vue-3'
+  // import BootstrapVue3 from 'bootstrap-vue-3'
+  import {BDropdown} from 'bootstrap-vue-3';
   import 'bootstrap/dist/css/bootstrap.css'
   import 'bootstrap-vue-3/dist/bootstrap-vue-3.css'
-  import model from './bootstrap-model.vue'
+  import BootstrapModel from './components/bootstrap-model.vue'
   import "vue-select/dist/vue-select.css";
   console.log("vue-select");
-  createApp({}).use(BootstrapVue3);
+  // createApp({}).use(BootstrapVue3);
 
   export default {
     data () {
@@ -35,7 +47,13 @@
     },
     components:{
       vSelect,
-      model
+      BootstrapModel,
+      BDropdown
+    },
+    methods:{
+        check:function(){
+          console.log("BButton Working");
+        }
     }
   }
   </script>
