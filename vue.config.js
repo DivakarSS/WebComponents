@@ -1,4 +1,5 @@
 const { defineConfig } = require('@vue/cli-service')
+const { BootstrapVue3Resolver } = require('unplugin-vue-components/resolvers')
 const path = require('path');
 module.exports = defineConfig({
   transpileDependencies: true,
@@ -13,6 +14,9 @@ module.exports = defineConfig({
       alias: {
         vue$: path.resolve(__dirname, 'node_modules/vue/dist/vue.esm-bundler.js'),
       }
-    }
+    },
+    plugins: [
+      require('unplugin-vue-components/webpack')({ resolvers: [BootstrapVue3Resolver()]}),
+    ],
   }
 })
